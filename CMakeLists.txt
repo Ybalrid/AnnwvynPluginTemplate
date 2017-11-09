@@ -28,6 +28,7 @@ include_directories(
 
 link_directories($ENV{AnnwvynSDK64}/Annwvyn/lib/
     $ENV{HOME}/AnnwvynDeps/openvr/lib/linux64/
+    /usr/local/lib/
     )
 
 add_library(${PLUGIN_NAME} MODULE ${Sources} ${Headers})

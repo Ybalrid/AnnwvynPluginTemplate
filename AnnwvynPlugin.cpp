@@ -1,7 +1,9 @@
 #include <AnnLogger.hpp>
 #include "AnnwvynPlugin.hpp"
 
-PluginTemplate::PluginTemplate() : Annwvyn::AnnUserSubSystem("Plugin Template")
+using namespace Annwvyn;
+
+PluginTemplate::PluginTemplate() : AnnUserSubSystem("Plugin Template")
 {
 }
 
@@ -16,7 +18,7 @@ bool PluginTemplate::needUpdate()
 
 void PluginTemplate::update()
 {
-	Annwvyn::AnnDebug() << "This code is called once per loop";
+	AnnDebug() << "This code is called once per loop";
 }
 
 AnnUserSubSystemPluginBootImpl(PluginTemplate)

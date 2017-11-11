@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6.3)
 
 
 set(CMAKE_CXX_STANDARD 14)
-set(PLUGIN_NAME "PluginTemplate")
+set(ANNWVYN_PLUGIN_NAME "PluginTemplate")
 
 #basic configuration
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -51,7 +51,7 @@ set(TinyXML2_ROOT $ENV{AnnwvynSDK64}/tinyxml2/build/install CACHE PATH "TinyXML2
 set(SNDFILE_WINDOWS_INSTALL $ENV{AnnwvynSDK64}/libsndfile CACHE PATH "libsndfile install")
 
 
-project(${PLUGIN_NAME})
+project(${ANNWVYN_PLUGIN_NAME})
 
 file(GLOB Sources *.cpp)
 file(GLOB Headers *.hpp)
@@ -102,8 +102,8 @@ link_directories($ENV{AnnwvynSDK64}/Annwvyn/lib/
     $ENV{HOME}/AnnwvynDeps/openvr/lib/linux64/
     )
 
-add_library(${PLUGIN_NAME} MODULE ${Sources} ${Headers})
+add_library(${ANNWVYN_PLUGIN_NAME} MODULE ${Sources} ${Headers})
 
-target_link_libraries(${PLUGIN_NAME} Annwvyn)
+target_link_libraries(${ANNWVYN_PLUGIN_NAME} Annwvyn)
 
 

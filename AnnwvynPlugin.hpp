@@ -1,6 +1,6 @@
 #pragma once
 
-#include <AnnUserSpaceSubSystem.hpp>
+#include <Annwvyn.h>
 
 class AnnUserSubSystemPluginExport PluginTemplate : public Annwvyn::AnnUserSubSystem
 {

@@ -28,6 +28,7 @@ if(WIN32)
         ${AnnSDK}/BtOgre21/CMake
         )
 endif()
+
 if(UNIX)
     set(
         CMAKE_MODULE_PATH
@@ -50,12 +51,10 @@ set(ENV{GLFW_LOCATION} $ENV{AnnwvynSDK64}/glfw/build/install CACHE PATH "GLFW in
 set(TinyXML2_ROOT $ENV{AnnwvynSDK64}/tinyxml2/build/install CACHE PATH "TinyXML2 install")
 set(SNDFILE_WINDOWS_INSTALL $ENV{AnnwvynSDK64}/libsndfile CACHE PATH "libsndfile install")
 
-
 project(${ANNWVYN_PLUGIN_NAME})
 
 file(GLOB Sources *.cpp)
 file(GLOB Headers *.hpp)
-
 
 if(MSVC)
     #Configure compilation parameters
@@ -73,6 +72,15 @@ find_package(TinyXML2 REQUIRED)
 find_package(SNDFILE REQUIRED)
 find_package(OIS REQUIRED)
 find_package(OpenAL REQUIRED)
+
+#finding GLEW on windows require the prefix and library path to be modified
+if(WIN32)
+    set(CMAKE_PREFIX_PATH $ENV{AnnwvynSDK64}/glew)
+    set(CMAKE_LIBRARY_PATH $ENV{AnnwvynSDK64}/glew/lib/Release/x64)
+endif(WIN32)
+
+find_package(GLEW REQUIRED)
+find_package(GLFW REQUIRED)
 
 include_directories(
     $ENV{AnnwvynSDK64}/Annwvyn/include
@@ -93,10 +101,12 @@ include_directories(
     #Audio 
     ${OPENAL_INCLUDE_DIR}
     ${SNDFILE_INCLUDE_DIRS}
-	${AnnSDK}/chaiscript
+    ${AnnSDK}/chaiscript
 
+    #additional support libraires
+    ${TinyXML2_INCLUDE_DIRS}
+    ${GLEW_INCLUDE_DIRS}
     )
-
 
 link_directories($ENV{AnnwvynSDK64}/Annwvyn/lib/
     $ENV{HOME}/AnnwvynDeps/openvr/lib/linux64/

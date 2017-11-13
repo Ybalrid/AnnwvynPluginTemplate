@@ -102,6 +102,7 @@ include_directories(
     ${OPENAL_INCLUDE_DIR}
     ${SNDFILE_INCLUDE_DIRS}
     ${AnnSDK}/chaiscript
+    $ENV{HOME}/AnnwvynDeps/chaiscript
 
     #additional support libraires
     ${TinyXML2_INCLUDE_DIRS}

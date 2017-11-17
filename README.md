@@ -24,7 +24,7 @@ To load a plugin inside the "client" game application, you just need to have the
     AnnGetEngine()->loadUserSubSystemFromPlugin("PluginTemplate");
 ```
 
-Beside the 2nd argument, there's a default boolean that specify that the file has to be loaded from the local directory. This is especially userfull on Linux while developing. If set to false, the normal library search methods of the OS will be used. (for linux users, see documentation about ldconfig and the associated environemnet variables)
+Beside the name of hte plugin, there's 2nd defaulted to "true" boolean that specify if the file has to be loaded from the local directory. This is especially userfull on Linux while developing. If set to false, the normal library search methods of the OS will be used. (for linux users, see documentation about ldconfig and the associated environemnet variables)
 
 
 

@@ -15,4 +15,5 @@ protected:
 };
 
 //Once loaded, the plugin need to call a boostrap function. This macro will create it for you.
+//You need to provide the name of your plugin in parentheses.
 AnnUserSubSystemPluginBootDeclare(PluginTemplate);

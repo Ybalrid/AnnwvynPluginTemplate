@@ -9,6 +9,7 @@ class AnnUserSubSystemPluginExport PluginTemplate : public Annwvyn::AnnUserSubSy
 public:
 	PluginTemplate();
 	~PluginTemplate();
+
 protected:
 	void update() override;
 	bool needUpdate() override;

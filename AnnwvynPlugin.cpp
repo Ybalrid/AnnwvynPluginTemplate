@@ -3,7 +3,8 @@
 
 using namespace Annwvyn;
 
-PluginTemplate::PluginTemplate() : AnnUserSubSystem("Plugin Template")
+PluginTemplate::PluginTemplate() :
+ AnnUserSubSystem("Plugin Template")
 {
 }
 
